@@ -31,6 +31,9 @@ const displayProduct = products => {
 	const productContainer = document.getElementById("product-container");
 	productContainer.textContent = "";
 
+	// clear previos content
+	document.getElementById("product-detail").textContent = "";
+
 	// check products lenght
 	if (products.length === 0) {
 		document.getElementById("error").innerText = "No result found";
@@ -47,10 +50,64 @@ const displayProduct = products => {
           <h6 class="card-title"><b class="text-warning">Name :</b> ${product.phone_name}</h6>
           <p class="card-text"><b class="text-warning">Brand :</b> ${product.brand}</p>
         </div>
-        <button class="btn btn-warning text-white">SEE DETAILS</button>
+        <button class="btn btn-warning text-white" onclick="loadDetails('${product.slug}')">SEE DETAILS</button>
       </div>
     `;
 
 		productContainer.appendChild(div);
 	}
+};
+
+// load details product
+const loadDetails = productId => {
+	const url = `https://openapi.programming-hero.com/api/phone/${productId}`;
+	fetch(url)
+		.then(response => response.json())
+		.then(data => displayDetails(data.data));
+};
+
+// show display product details
+const displayDetails = product => {
+	console.log(product);
+	const detailsContainer = document.getElementById("product-detail");
+	detailsContainer.textContent = "";
+
+	const div = document.createElement("div");
+	// add multiple classes classlist
+	const classes = ["card", "mb-3"];
+	div.classList.add(...classes);
+
+	div.innerHTML = `
+				<div class="row p-3 g-0">
+					<div class="col-md-4 d-flex justify-content-center">
+						<img
+							src="${product.image}"
+							class="img-fluid rounded-start"
+							alt="..."
+						/>
+					</div>
+					<div class="col-md-8">
+						<div class="card-body">
+						<h6 class="card-title"><b class="text-warning">Name :</b> ${product.name}</h6>
+						<p class="card-text"><b class="text-warning">Brand :</b> ${product.brand}</p>
+						<p class="card-text"><b class="text-warning">Storage :</b> ${
+							product.mainFeatures.storage
+						}</p>
+						<p class="card-text"><b class="text-warning">Display Size :</b> ${
+							product.mainFeatures.displaySize
+						}</p>
+						<p class="card-text"><b class="text-warning">Chipset :</b> ${
+							product.mainFeatures.chipSet
+						}</p>
+						<p class="card-text"><b class="text-warning">Memory :</b> ${
+							product.mainFeatures.memory
+						}</p>
+						<p class="card-text"><b class="text-warning">Release Date :</b> ${
+							product.releaseDate || "Not Available Release Date"
+						}</p>
+						</div>
+					</div>
+				</div>
+	`;
+	detailsContainer.appendChild(div);
 };
