@@ -7,6 +7,7 @@ const searchProduct = () => {
 	if (!isNaN(searchText) || searchText == "") {
 		errorMessage.innerText = "Not a valid search";
 		document.getElementById("product-container").textContent = "";
+		document.getElementById("product-detail").textContent = "";
 	} else {
 		errorMessage.innerText = "";
 		loadProduct(searchText);
@@ -18,12 +19,9 @@ const searchProduct = () => {
 // search load product
 const loadProduct = phone => {
 	const url = `https://openapi.programming-hero.com/api/phones?search=${phone}`;
-	console.log(url);
 	fetch(url)
 		.then(response => response.json())
-		.then(data => displayProduct(data.data))
-		.catch(error => console.log(error));
-	// .catch(error => (document.getElementById("error").innerText = error));
+		.then(data => displayProduct(data.data));
 };
 
 // display search product
