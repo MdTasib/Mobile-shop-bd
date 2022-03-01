@@ -41,8 +41,8 @@ const displayProduct = products => {
 		const div = document.createElement("div");
 		div.classList.add("col");
 		div.innerHTML = `
-      <div class="card h-100 shadow-sm p-3 mb-3 bg-body rounded">
-        <img width="250px" src="${product.image}" class="card-img-top" alt="..." />
+      <div class="card h-100 shadow p-3 mb-3 bg-body rounded border-3 border-light">
+        <img width="250px" src="${product.image}" class="card-img-top w-75 h-auto m-auto" alt="..." />
         <div class="card-body">
           <h6 class="card-title"><b class="text-warning">Name :</b> ${product.phone_name}</h6>
           <p class="card-text"><b class="text-warning">Brand :</b> ${product.brand}</p>
