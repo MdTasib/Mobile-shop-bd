@@ -6,6 +6,7 @@ const searchProduct = () => {
 
 	if (!isNaN(searchText) || searchText == "") {
 		errorMessage.innerText = "Not a valid search";
+		document.getElementById("product-container").textContent = "";
 	} else {
 		errorMessage.innerText = "";
 		loadProduct(searchText);
@@ -28,8 +29,15 @@ const loadProduct = phone => {
 // display search product
 const displayProduct = products => {
 	const productContainer = document.getElementById("product-container");
+	productContainer.textContent = "";
+
+	// check products lenght
+	if (products.length === 0) {
+		document.getElementById("error").innerText = "No result found";
+	}
+
+	// each products display
 	for (const product of products) {
-		console.log(product);
 		const div = document.createElement("div");
 		div.classList.add("col");
 		div.innerHTML = `
