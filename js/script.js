@@ -80,32 +80,51 @@ const displayDetails = product => {
 					<div class="col-md-4 d-flex justify-content-center">
 						<img
 							src="${product.image}"
-							class="img-fluid rounded-start"
+							class="img-fluid rounded-start h-50"
 							alt="..."
 						/>
 					</div>
 					<div class="col-md-8">
 						<div class="card-body">
-						<h6 class="card-title"><b class="text-warning">Name :</b> ${product.name}</h6>
-						<p class="card-text"><b class="text-warning">Brand :</b> ${product.brand}</p>
-						<p class="card-text"><b class="text-warning">Storage :</b> ${
-							product.mainFeatures.storage
-						}</p>
-						<p class="card-text"><b class="text-warning">Display Size :</b> ${
-							product.mainFeatures.displaySize
-						}</p>
-						<p class="card-text"><b class="text-warning">Chipset :</b> ${
-							product.mainFeatures.chipSet
-						}</p>
-						<p class="card-text"><b class="text-warning">Memory :</b> ${
-							product.mainFeatures.memory
-						}</p>
-						<p class="card-text"><b class="text-warning">Sensors :</b> ${product.mainFeatures.sensors.map(
-							sersor => sersor
-						)}</p>
-						<p class="card-text"><b class="text-warning">Release Date :</b> ${
-							product.releaseDate || "Not Available Release Date"
-						}</p>
+							<h6 class="card-title"><b class="text-warning">Name :</b> ${product.name}</h6>
+							<p class="card-text"><b class="text-warning">Brand :</b> ${product.brand}</p>
+							<p class="card-text"><b class="text-warning">Storage :</b> ${
+								product.mainFeatures.storage
+							}</p>
+							<p class="card-text"><b class="text-warning">Display Size :</b> ${
+								product.mainFeatures.displaySize
+							}</p>
+							<p class="card-text"><b class="text-warning">Chipset :</b> ${
+								product.mainFeatures.chipSet
+							}</p>
+							<p class="card-text"><b class="text-warning">Memory :</b> ${
+								product.mainFeatures.memory
+							}</p>
+							<p class="card-text"><b class="text-warning">Sensors :</b> ${product.mainFeatures.sensors.map(
+								sersor => sersor
+							)}</p>
+
+							<p class="card-text"><b class="text-warning">WLAN :</b> ${
+								product?.others?.WLAN || "Not available"
+							}</p>
+							<p class="card-text"><b class="text-warning">Bluetooth :</b> ${
+								product?.others?.Bluetooth || "Not available"
+							}</p>
+							<p class="card-text"><b class="text-warning">GPS :</b> ${
+								product?.others?.GPS || "Not available"
+							}</p>
+							<p class="card-text"><b class="text-warning">NFC :</b> ${
+								product?.others?.NFC || "Not available"
+							}</p>
+							<p class="card-text"><b class="text-warning">Radio :</b> ${
+								product?.others?.Radio || "Not available"
+							}</p>
+							<p class="card-text"><b class="text-warning">USB :</b> ${
+								product?.others?.USB || "Not available"
+							}</p>
+							<p class="card-text"><b class="text-warning">Release Date :</b> ${
+								product.releaseDate || "Not Available Release Date"
+							}</p>
 						</div>
 					</div>
 				</div>
