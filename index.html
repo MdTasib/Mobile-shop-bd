@@ -13,11 +13,90 @@
 		/>
 	</head>
 	<body>
+		<!-- header area start -->
+		<header>
+			<nav class="navbar navbar-expand-lg navbar-light bg-light">
+				<div class="container">
+					<a class="navbar-brand fw-bold">
+						MOBILE SHOP <span class="text-warning">BD</span>
+					</a>
+					<button
+						class="navbar-toggler"
+						type="button"
+						data-bs-toggle="collapse"
+						data-bs-target="#navbarNav"
+						aria-controls="navbarNav"
+						aria-expanded="false"
+						aria-label="Toggle navigation"
+					>
+						<span class="navbar-toggler-icon"></span>
+					</button>
+					<div class="collapse navbar-collapse" id="navbarNav">
+						<ul class="navbar-nav ms-auto">
+							<li class="nav-item">
+								<a class="nav-link active" aria-current="page" href="#">Home</a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link" href="#">About</a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link" href="#">Contact</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</nav>
+		</header>
+		<!-- header area end -->
+
+		<!-- search area start -->
+		<div class="container w-50 text-center">
+			<div class="input-group py-4">
+				<input
+					type="text"
+					class="form-control"
+					placeholder="Search Your Product"
+					id="search-input"
+				/>
+				<button
+					onclick="searchProduct()"
+					class="btn btn-warning text-white"
+					type="button"
+				>
+					Search
+				</button>
+			</div>
+			<h4 class="fw-bold text-danger fst-italic" id="error"></h4>
+		</div>
+		<!-- search area end -->
+
+		<!-- products area start -->
+		<main class="container">
+			<div class="row row-cols-1 row-cols-md-3 g-4" id="product-container">
+				<!-- <div class="col">
+					<div class="card h-100">
+						<img src="..." class="card-img-top" alt="..." />
+						<div class="card-body">
+							<h5 class="card-title">Card title</h5>
+							<p class="card-text">
+								This is a longer card with supporting text below as a natural
+								lead-in to additional content. This content is a little bit
+								longer.
+							</p>
+						</div>
+					</div>
+				</div> -->
+			</div>
+		</main>
+		<!-- products area end -->
+
 		<!-- bootstrap js file -->
 		<script
 			src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
 			integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
 			crossorigin="anonymous"
 		></script>
+		<!-- js custom file -->
+		<script src="js/script.js"></script>
 	</body>
 </html>
