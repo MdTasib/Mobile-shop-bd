@@ -5,7 +5,7 @@ const searchProduct = () => {
 	const searchText = searchInput.value;
 
 	if (!isNaN(searchText) || searchText == "") {
-		errorMessage.innerText = "Not a valid search";
+		errorMessage.innerText = "Please, give a valid product name";
 		document.getElementById("product-container").textContent = "";
 		document.getElementById("product-detail").textContent = "";
 	} else {
@@ -18,6 +18,8 @@ const searchProduct = () => {
 
 // search load product
 const loadProduct = phone => {
+	// show spenner
+	showSpenner(true);
 	const url = `https://openapi.programming-hero.com/api/phones?search=${phone}`;
 	fetch(url)
 		.then(response => response.json())
@@ -26,6 +28,8 @@ const loadProduct = phone => {
 
 // display search product
 const displayProduct = products => {
+	// hide spenner
+	showSpenner(false);
 	const productContainer = document.getElementById("product-container");
 	productContainer.textContent = "";
 
@@ -58,6 +62,8 @@ const displayProduct = products => {
 
 // load details product
 const loadDetails = productId => {
+	// show spenner
+	showSpenner(true);
 	const url = `https://openapi.programming-hero.com/api/phone/${productId}`;
 	fetch(url)
 		.then(response => response.json())
@@ -66,7 +72,8 @@ const loadDetails = productId => {
 
 // show display product details
 const displayDetails = product => {
-	console.log(product);
+	// hide spenner
+	showSpenner(false);
 	const detailsContainer = document.getElementById("product-detail");
 	detailsContainer.textContent = "";
 
@@ -130,4 +137,14 @@ const displayDetails = product => {
 				</div>
 	`;
 	detailsContainer.appendChild(div);
+};
+
+// spenner
+const showSpenner = loading => {
+	const spenner = document.getElementById("spenner");
+	if (loading) {
+		spenner.classList.remove("d-none");
+	} else {
+		spenner.classList.add("d-none");
+	}
 };

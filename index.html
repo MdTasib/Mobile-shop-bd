@@ -11,6 +11,8 @@
 			integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
 			crossorigin="anonymous"
 		/>
+
+		<style></style>
 	</head>
 	<body>
 		<!-- header area start -->
@@ -76,21 +78,20 @@
 
 		<!-- products area start -->
 		<main class="container">
-			<div class="row row-cols-1 row-cols-md-3 g-4" id="product-container">
-				<!-- <div class="col">
-					<div class="card h-100">
-						<img src="..." class="card-img-top" alt="..." />
-						<div class="card-body">
-							<h5 class="card-title">Card title</h5>
-							<p class="card-text">
-								This is a longer card with supporting text below as a natural
-								lead-in to additional content. This content is a little bit
-								longer.
-							</p>
-						</div>
-					</div>
-				</div> -->
+			<!-- spenner -->
+			<div
+				class="d-flex justify-content-center align-items-center py-5 d-none"
+				id="spenner"
+			>
+				<div class="spinner-border text-warning" role="status">
+					<span class="visually-hidden">Loading...</span>
+				</div>
 			</div>
+
+			<div
+				class="row row-cols-1 row-cols-md-3 g-4"
+				id="product-container"
+			></div>
 		</main>
 		<!-- products area end -->
 
