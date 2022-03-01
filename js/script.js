@@ -38,7 +38,7 @@ const displayProduct = products => {
 	}
 
 	// each products display
-	for (const product of products) {
+	for (const product of products.slice(0, 20)) {
 		const div = document.createElement("div");
 		div.classList.add("col");
 		div.innerHTML = `
