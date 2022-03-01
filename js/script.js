@@ -100,6 +100,9 @@ const displayDetails = product => {
 						<p class="card-text"><b class="text-warning">Memory :</b> ${
 							product.mainFeatures.memory
 						}</p>
+						<p class="card-text"><b class="text-warning">Sensors :</b> ${product.mainFeatures.sensors.map(
+							sersor => sersor
+						)}</p>
 						<p class="card-text"><b class="text-warning">Release Date :</b> ${
 							product.releaseDate || "Not Available Release Date"
 						}</p>
